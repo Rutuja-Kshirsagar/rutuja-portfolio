@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rutuja Kshirsagar | Java Full Stack Developer</title>
+<meta name="description" content="Portfolio of Rutuja Kshirsagar, Java Full Stack Developer with experience in Spring Boot, React.js, REST APIs and MySQL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f6f8;--surface:#fff;--ink:#16223b;--muted:#5a6479;--line:#dde1ea;--accent:#1d5c63;--accent-soft:#e3eff0;
+--serif:'Newsreader',Georgia,'Times New Roman',serif;--sans:'Figtree',system-ui,-apple-system,'Segoe UI',Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1624;--surface:#17203273;--ink:#e8ecf4;--muted:#9aa5bb;--line:#273250;--accent:#6fc2c9;--accent-soft:#16303a}}
+:root[data-theme="dark"]{--bg:#0f1624;--surface:#17203273;--ink:#e8ecf4;--muted:#9aa5bb;--line:#273250;--accent:#6fc2c9;--accent-soft:#16303a}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+.layout{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:320px 1fr;gap:72px;padding:0 32px}
+aside{position:sticky;top:0;align-self:start;height:100vh;padding:72px 0 40px;display:flex;flex-direction:column}
+aside h1{font-family:var(--serif);font-weight:500;font-size:2.6rem;line-height:1.1;letter-spacing:-.01em}
+.role{margin-top:12px;color:var(--accent);font-weight:600}
+.tag{margin-top:16px;color:var(--muted);font-size:.98rem}
+nav{margin-top:40px;display:flex;flex-direction:column;gap:4px}
+nav a{text-decoration:none;color:var(--muted);padding:6px 0 6px 16px;border-left:2px solid var(--line);transition:color .2s,border-color .2s}
+nav a:hover,nav a.active{color:var(--ink);border-color:var(--accent)}
+.side-foot{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-block;padding:10px 18px;border-radius:6px;border:1px solid var(--accent);background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem;cursor:pointer;font-family:inherit}
+.btn.ghost{background:transparent;color:var(--accent)}
+:root[data-theme="dark"] .btn:not(.ghost){color:#0f1624}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn:not(.ghost){color:#0f1624}}
+main{padding:72px 0 40px}
+section{padding-bottom:72px}
+h2{font-family:var(--serif);font-weight:500;font-size:1.9rem;margin-bottom:24px;letter-spacing:-.01em}
+p{max-width:62ch}
+.skills{display:grid;gap:0;border-top:1px solid var(--line)}
+.skills div{display:grid;grid-template-columns:190px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.skills dt{font-weight:600}
+.skills dd{color:var(--muted)}
+.job{padding:0 0 40px 24px;border-left:2px solid var(--line);position:relative}
+.job:last-child{padding-bottom:0}
+.job::before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.job h3{font-family:var(--serif);font-size:1.35rem;font-weight:600}
+.job .where{color:var(--accent);font-weight:600}
+.job .when{color:var(--muted);font-size:.92rem;margin-bottom:12px}
+.job ul{padding-left:18px;max-width:64ch}
+.job li{margin-bottom:8px}
+.projects{display:grid;gap:20px}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px}
+.proj h3{font-family:var(--serif);font-size:1.25rem;margin-bottom:6px}
+.proj p{color:var(--muted);margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0}
+.chips li{background:var(--accent-soft);color:var(--accent);font-size:.84rem;font-weight:600;padding:3px 10px;border-radius:99px}
+.edu{display:grid;gap:18px}
+.edu div{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.edu strong{font-family:var(--serif);font-size:1.15rem;font-weight:600}
+.edu span{color:var(--muted)}
+.contact-list{list-style:none;padding:0;display:grid;gap:12px}
+.contact-list a{color:var(--accent);font-weight:600}
+footer{color:var(--muted);font-size:.9rem;padding:24px 0 48px;border-top:1px solid var(--line)}
+.theme{background:none;border:1px solid var(--line);color:var(--muted);border-radius:6px;padding:9px 12px;cursor:pointer;font-family:inherit}
+@media (max-width:900px){
+.layout{grid-template-columns:1fr;gap:0;padding:0 22px}
+aside{position:static;height:auto;padding:48px 0 8px}
+aside h1{font-size:2.2rem}nav{display:none}
+.side-foot{margin-top:24px}
+main{padding-top:32px}
+.skills div{grid-template-columns:1fr;gap:2px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside>
+  <h1>Rutuja Kshirsagar</h1>
+  <p class="role">Java Full Stack Developer</p>
+  <p class="tag">Building reliable banking and web applications with Java, Spring Boot and React. Based in Pune, India.</p>
+  <nav aria-label="Sections">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Work highlights</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="side-foot">
+    <a class="btn" href="Rutuja_Dinesh_Kshirsagar_Resume.pdf" download>Download resume</a>
+    <button class="theme" id="theme" type="button" aria-label="Switch between light and dark theme">Theme</button>
+  </div>
+</aside>
+
+<main>
+<section id="about">
+  <h2>About</h2>
+  <p>I am a Java Full Stack Developer with around 2 years of experience in Java, Spring Boot, REST APIs, MySQL and React.js. I have worked on enterprise digital banking solutions using the Finacle Digital Engagement Hub (DEH), supporting 5+ core modules and 15+ enhancements.</p>
+  <p style="margin-top:14px">My day-to-day covers backend service support, API integration and testing, database validation, debugging and defect resolution, all within Agile teams.</p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <dl class="skills">
+    <div><dt>Backend</dt><dd>Java, Spring Boot, REST APIs, Microservices, DEH Framework</dd></div>
+    <div><dt>Frontend</dt><dd>React.js, JavaScript, HTML5, CSS3, Bootstrap</dd></div>
+    <div><dt>Database</dt><dd>MySQL, SQL, Database Validation</dd></div>
+    <div><dt>Tools and practices</dt><dd>Postman, Git, SVN, Eclipse, HPALM, API Testing, API Integration, Debugging, Defect and Change Request Management, Agile/Scrum</dd></div>
+  </dl>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="job">
+    <h3>System Engineer</h3>
+    <p class="where">EdgeVerve Systems Limited (Infosys Limited)</p>
+    <p class="when">March 2025 to January 2026 · Pune</p>
+    <ul>
+      <li>Supported deployment of 5+ core modules for a large digital banking project on the Finacle DEH framework.</li>
+      <li>Delivered 15+ enhancements, including Product Offering, OTP authentication screens and the Top-Up Finance digital journey.</li>
+      <li>Validated REST APIs with Postman, cutting integration verification time by 35%.</li>
+      <li>Resolved 20+ change requests and defects using HPALM; improved query response times by 15% through MySQL validation.</li>
+    </ul>
+  </div>
+  <div class="job">
+    <h3>Software Engineer Trainee</h3>
+    <p class="where">Techno Crafts Computer</p>
+    <p class="when">July 2023 to March 2024 · Pune</p>
+    <ul>
+      <li>Built and maintained 3+ responsive web apps using React.js, Java and MySQL.</li>
+      <li>Created reusable React components, reducing development time by 25%.</li>
+      <li>Optimised Java and MySQL operations, lowering query latency by 20%.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Work highlights</h2>
+  <div class="projects">
+    <article class="proj">
+      <h3>Digital banking on Finacle DEH</h3>
+      <p>Enterprise banking features across 5+ core modules, including OTP authentication and the Top-Up Finance journey.</p>
+      <ul class="chips"><li>Java</li><li>Spring Boot</li><li>REST APIs</li><li>MySQL</li><li>Postman</li></ul>
+    </article>
+    <article class="proj">
+      <h3>Responsive web applications</h3>
+      <p>Three responsive web apps with reusable React interfaces, backed by Java and MySQL.</p>
+      <ul class="chips"><li>React.js</li><li>JavaScript</li><li>HTML5 / CSS3</li><li>Java</li><li>MySQL</li></ul>
+    </article>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="edu">
+    <div><div><strong>PG-DAC, Post Graduate Diploma in Advanced Computing</strong></div><span>IET/CDAC, Pune · 2024 · 50.88%</span></div>
+    <div><div><strong>B.E. Computer Engineering</strong></div><span>Savitribai Phule Pune University · 2023 · 72.35%</span></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p style="margin-bottom:18px">Open to Java and full stack roles. Write to me or connect on LinkedIn.</p>
+  <ul class="contact-list">
+    <li>Email: <a href="mailto:rutujaksagar23@gmail.com">rutujaksagar23@gmail.com</a></li>
+    <li>Phone: <a href="tel:+917776082838">7776082838</a></li>
+    <li>LinkedIn: <a href="https://www.linkedin.com/in/rutuja-kshirsagar-eng/" target="_blank" rel="noopener">linkedin.com/in/rutuja-kshirsagar-eng</a></li>
+  </ul>
+  <p style="margin-top:24px"><a class="btn ghost" href="Rutuja_Dinesh_Kshirsagar_Resume.pdf" download>Download resume</a></p>
+</section>
+<footer>© <span id="yr"></span> Rutuja Kshirsagar</footer>
+</main>
+</div>
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+const root=document.documentElement,btn=document.getElementById('theme');
+btn.addEventListener('click',()=>{
+  const dark=getComputedStyle(root).getPropertyValue('--bg').trim()==='#0f1624';
+  root.setAttribute('data-theme',dark?'light':'dark');
+});
+const links=[...document.querySelectorAll('nav a')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-40% 0px -55% 0px'});
+document.querySelectorAll('main section').forEach(s=>io.observe(s));
+</script>
+</body>
+</html>
